@@ -8,6 +8,7 @@ public class Index {
     private Date date;
     private List<Equity> equityList;
 
+
     public Index(String name, Date date, List<Equity> equityList){
         this.name = name;
         this.date = date;
