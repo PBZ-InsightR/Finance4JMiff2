@@ -1,18 +1,17 @@
 package com.pbz4esilv.model;
 
+import java.util.Date;
+import java.util.List;
 
 public class Index {
+    private String name;
+    private Date date;
+    private List<Equity> equityList;
 
-    private String indexname;
-    private String date;
-    private double value;
-
-    public Index(String indexname,String date, double value ) {
-
-        this.indexname = indexname ;
+    public Index(String name, Date date, List<Equity> equityList){
+        this.name = name;
         this.date = date;
-        this.value = value ;
-
+        this.equityList = equityList;
     }
-}
 
+}
