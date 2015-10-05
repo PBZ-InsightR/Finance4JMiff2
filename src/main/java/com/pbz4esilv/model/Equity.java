@@ -9,4 +9,5 @@ public class Equity {
     private double price;
     private double volatility;
     private Date dateValuation ;
+    private double dividend;
 }
