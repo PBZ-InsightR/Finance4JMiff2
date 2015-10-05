@@ -6,5 +6,5 @@ package com.pbz4esilv.model;
 public class Index {
     private String nom;
     private double valeur;
-    private String[] Constituants;
+    private String[] constituants;
 }
