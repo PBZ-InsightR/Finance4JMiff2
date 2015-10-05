@@ -15,5 +15,9 @@ public class Index {
         this.value=value;
         this.equityList = equityList;
     }
+    public double getValue()
+    {
+        return value;
+    }
 
 }
