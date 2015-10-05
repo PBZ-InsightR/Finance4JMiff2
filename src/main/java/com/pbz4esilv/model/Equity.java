@@ -11,12 +11,17 @@ public class Equity {
     private Date dateValuation ;
     private double dividend;
 
-    public Equity(String axa, int i) {
-        // TODO
+    public Equity(String _name,String _ticker, double _price,double _volatility, Date _dateValuation, double _Dividend ) {
+        this.name = _name ;
+        this.ticker = _ticker;
+        this.price = _price ;
+        this.volatility = _volatility ;
+        this.dateValuation = _dateValuation;
+        this.dividend = _Dividend;
     }
 
     public String getName() {
-        // TODO
-        return "";
+
+        return this.name;
     }
 }
