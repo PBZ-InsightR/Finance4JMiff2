@@ -21,6 +21,9 @@ public class Index {
     public Date getDate() {
         return this.date;
     }
+    public double getValue(){
+        return this.value;
+    }
     public List<Equity> getEquityList() {
        return this.equityList;
     }
