@@ -10,4 +10,13 @@ public class Equity {
     private double volatility;
     private Date dateValuation ;
     private double dividend;
+
+    public Equity(String axa, int i) {
+        // TODO
+    }
+
+    public String getName() {
+        // TODO
+        return "";
+    }
 }
