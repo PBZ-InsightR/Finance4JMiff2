@@ -21,7 +21,21 @@ public class Equity {
     }
 
     public String getName() {
-
         return this.name;
+    }
+    public double getPrice() {
+        return this.price;
+    }
+    public String getTicker() {
+        return this.ticker;
+    }
+    public double getVolatility() {
+        return this.volatility;
+    }
+    public Date getDateValuation() {
+        return this.dateValuation;
+    }
+    public double getDividend() {
+        return this.dividend;
     }
 }
