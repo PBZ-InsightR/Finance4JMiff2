@@ -15,5 +15,14 @@ public class Index {
         this.value=value;
         this.equityList = equityList;
     }
+    public String getName() {
+        return this.name;
+    }
+    public Date getDate() {
+        return this.date;
+    }
+    public List<Equity> getEquityList() {
+       return this.equityList;
+    }
 
 }
