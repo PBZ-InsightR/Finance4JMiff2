@@ -14,6 +14,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Finance4JApp extends Application {
+    MainController mainController;
+
     ComboBox<String> comboBox;
     Button loadButton;
 
@@ -21,27 +23,23 @@ public class Finance4JApp extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
+        mainController = new MainController();
+
         Pane mainPane = FXMLLoader.load(getClass().getResource("Finance4J.fxml"));
 
         HBox hbox = (HBox) mainPane.getChildren().get(0);
 
         comboBox = (ComboBox<String>) hbox.getChildren().get(0);
-        comboBox.getItems().add("AXA");
-        comboBox.getItems().add("Allianz");
-        comboBox.getItems().add("Bred");
-
+        comboBox.getItems().add("CAC 40");
+        comboBox.getItems().add("SBF120");
 
         loadButton = (Button) hbox.getChildren().get(1);
-        loadButton.setText("LOAD");
-
-
         loadButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+               mainController.afficher(comboBox.getValue());
             }
         });
-
 
         Scene scene = new Scene(mainPane, 1000, 700);
 
@@ -54,5 +52,7 @@ public class Finance4JApp extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+
 
 }

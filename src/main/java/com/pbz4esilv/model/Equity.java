@@ -40,5 +40,5 @@ public class Equity {
     public double getDividend() {
         return this.dividend;
     }
-    public double getWeight() {return this.getWeight();}
+    public double getWeight() {return this.weight;}
 }
