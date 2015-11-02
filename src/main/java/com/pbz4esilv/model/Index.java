@@ -20,7 +20,7 @@ public class Index {
         }
 
     }
-    public void Add_equity(Equity un){
+    public void add_equity(Equity un){
         this.equityList.add(un);
 
     }
