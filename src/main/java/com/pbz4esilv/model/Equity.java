@@ -10,14 +10,16 @@ public class Equity {
     private double volatility;
     private Date dateValuation ;
     private double dividend;
+    private double weight;
 
-    public Equity(String name,String ticker, double price,double volatility, Date dateValuation, double dividend ) {
+    public Equity(String name,String ticker, double price,double volatility, Date dateValuation, double dividend , double weight) {
         this.name = name ;
         this.ticker = ticker;
         this.price = price ;
         this.volatility = volatility ;
         this.dateValuation = dateValuation;
         this.dividend = dividend;
+        this.weight=weight;
     }
 
     public String getName() {
@@ -38,4 +40,5 @@ public class Equity {
     public double getDividend() {
         return this.dividend;
     }
+    public double getWeight() {return this.getWeight();}
 }
