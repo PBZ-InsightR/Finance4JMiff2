@@ -1,18 +1,7 @@
 package com.pbz4esilv.model;
 
-import java.util.Date;
-import java.util.List;
-
+/**
+ * Created by Alessandro on 05/10/2015.
+ */
 public class Index {
-    private String name;
-    private Date date;
-    private List<Equity> equityList;
-
-
-    public Index(String name, Date date, List<Equity> equityList){
-        this.name = name;
-        this.date = date;
-        this.equityList = equityList;
-    }
-
 }
