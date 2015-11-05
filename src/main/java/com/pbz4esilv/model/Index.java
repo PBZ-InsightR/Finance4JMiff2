@@ -1,5 +1,6 @@
 package com.pbz4esilv.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -10,19 +11,30 @@ public class Index {
     private double value;
 
 
-    public Index(String name, Date date, List<Equity> equityList){
+    public Index(String name, Date date){
         this.name = name;
         this.date = date;
-        this.equityList = equityList;
-        for ( Equity  equity : equityList )
-        {
-            this.value = this.value + equity.getPrice()*equity.getWeight();
-        }
+        equityList = new ArrayList<>();
 
+    }
+
+    public void addEquity(Equity equity){
+        equityList.add(equity);
     }
     public void add_equity(Equity un){
         this.equityList.add(un);
 
     }
 
+
+    @Override
+    public String toString(){
+        String value = name;
+        value = value.concat(" = ");
+        for (Equity equity : equityList) {
+            value = value.concat(equity.getName());
+            value = value.concat(" / ");
+        }
+        return value;
+    }
 }
