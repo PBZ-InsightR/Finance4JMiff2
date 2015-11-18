@@ -27,11 +27,29 @@ public class MainController {
         Equity engie = new Equity("engie","engie",0.0,0.0,null,0.0,0.0);
         Equity essilor = new Equity("essilor","essilor",0.0,0.0,null,0.0,0.0);
         Equity kering = new Equity("kering","kering",0.0,0.0,null,0.0,0.0);
-
-
-
-
-
+        Equity laFargeHolcim = new Equity("laFargeHolcim","laFargeHolcim",0.0,0.0,null,0.0,0.0);
+        Equity legrand = new Equity("legrand","legrand",0.0,0.0,null,0.0,0.0);
+        Equity lOreal = new Equity("lOreal","lOreal",0.0,0.0,null,0.0,0.0);
+        Equity lvmh = new Equity("lvmh","lvmh",0.0,0.0,null,0.0,0.0);
+        Equity michelin = new Equity("michelin","michelin",0.0,0.0,null,0.0,0.0);
+        Equity orange = new Equity("orange","orange",0.0,0.0,null,0.0,0.0);
+        Equity pernodRicard = new Equity("pernodRicard","pernodRicard",0.0,0.0,null,0.0,0.0);
+        Equity peugeot = new Equity("peugeot","peugeot",0.0,0.0,null,0.0,0.0);
+        Equity publicis = new Equity("publicis","publicis",0.0,0.0,null,0.0,0.0);
+        Equity renault = new Equity("renault","renault",0.0,0.0,null,0.0,0.0);
+        Equity safran = new Equity("safran","safran",0.0,0.0,null,0.0,0.0);
+        Equity saintGobin = new Equity("saintGobin","saintGobin",0.0,0.0,null,0.0,0.0);
+        Equity sanofi = new Equity("sanofi","sanofi",0.0,0.0,null,0.0,0.0);
+        Equity schneiderElectric = new Equity("schneiderElectric","schneiderElectric",0.0,0.0,null,0.0,0.0);
+        Equity societeGenerale = new Equity("societeGenerale","societeGenerale",0.0,0.0,null,0.0,0.0);
+        Equity solvay = new Equity("solvay","solvay",0.0,0.0,null,0.0,0.0);
+        Equity technip = new Equity("technip","technip",0.0,0.0,null,0.0,0.0);
+        Equity total = new Equity("total","total",0.0,0.0,null,0.0,0.0);
+        Equity unibailRodamco = new Equity("unibailRodamco","unibailRodamco",0.0,0.0,null,0.0,0.0);
+        Equity valeo = new Equity("valeo","valeo",0.0,0.0,null,0.0,0.0);
+        Equity veoliaEnvironnement = new Equity("veoliaEnvironnement","veoliaEnvironnement",0.0,0.0,null,0.0,0.0);
+        Equity vinci = new Equity("vinci","vinci",0.0,0.0,null,0.0,0.0);
+        Equity vivendi = new Equity("vivendi","vivendi",0.0,0.0,null,0.0,0.0);
 
         Index indexEquity = new Index(indexName,new Date());
         indexEquity.addEquity(accord);
