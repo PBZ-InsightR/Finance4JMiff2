@@ -13,6 +13,8 @@ public class MainController {
         Equity accord= new Equity("accord","accord",0.0,0.0,null,0.0,0.0);
         Equity airLiquid= new Equity("airLiquid","airLiquid",0.0,0.0,null,0.0,0.0);
         Equity airbusGroup= new Equity("airbusGroup","airbusGroup",0.0,0.0,null,0.0,0.0);
+        Equity alcatel = new Equity("alcatel","alcatel",0.0,0.0,null,0.0,0.0);
+
 
         Index indexEquity = new Index(indexName,new Date());
         indexEquity.addEquity(accord);
