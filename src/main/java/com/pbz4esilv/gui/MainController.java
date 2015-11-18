@@ -50,7 +50,7 @@ public class MainController {
         Equity veoliaEnvironnement = new Equity("veoliaEnvironnement","veoliaEnvironnement",0.0,0.0,null,0.0,0.0);
         Equity vinci = new Equity("vinci","vinci",0.0,0.0,null,0.0,0.0);
         Equity vivendi = new Equity("vivendi","vivendi",0.0,0.0,null,0.0,0.0);
-        
+
         Index indexEquity = new Index(indexName,new Date());
         indexEquity.addEquity(accord);
         indexEquity.addEquity(airLiquid);
@@ -69,6 +69,30 @@ public class MainController {
         indexEquity.addEquity(engie);
         indexEquity.addEquity(essilor);
         indexEquity.addEquity(kering);
+        indexEquity.addEquity(legrand);
+        indexEquity.addEquity(lOreal);
+        indexEquity.addEquity(lvmh);
+        indexEquity.addEquity(michelin);
+        indexEquity.addEquity(orange);
+        indexEquity.addEquity(pernodRicard);
+        indexEquity.addEquity(peugeot);
+        indexEquity.addEquity(publicis);
+        indexEquity.addEquity(renault);
+        indexEquity.addEquity(safran);
+        indexEquity.addEquity(saintGobin);
+        indexEquity.addEquity(sanofi);
+        indexEquity.addEquity(schneiderElectric);
+        indexEquity.addEquity(societeGenerale);
+        indexEquity.addEquity(technip);
+        indexEquity.addEquity(total);
+        indexEquity.addEquity(unibailRodamco);
+        indexEquity.addEquity(veoliaEnvironnement);
+        indexEquity.addEquity(vinci);
+        indexEquity.addEquity(vivendi);
+        indexEquity.addEquity(valeo);
+
+
+
         System.out.println(indexEquity.toString());
     }
 
