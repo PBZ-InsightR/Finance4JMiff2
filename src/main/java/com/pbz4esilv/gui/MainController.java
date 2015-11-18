@@ -50,7 +50,7 @@ public class MainController {
         Equity veoliaEnvironnement = new Equity("veoliaEnvironnement","veoliaEnvironnement",0.0,0.0,null,0.0,0.0);
         Equity vinci = new Equity("vinci","vinci",0.0,0.0,null,0.0,0.0);
         Equity vivendi = new Equity("vivendi","vivendi",0.0,0.0,null,0.0,0.0);
-
+        
         Index indexEquity = new Index(indexName,new Date());
         indexEquity.addEquity(accord);
         indexEquity.addEquity(airLiquid);
