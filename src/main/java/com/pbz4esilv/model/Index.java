@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+
 public class Index {
     private String name;
     private Date date;
@@ -36,6 +37,46 @@ public class Index {
 
     public List<Equity> getList()
     {
-        return equityList;  //retourne la liste
+
+        return this.equityList;  //retourne la liste
     }
+    public int getSize()
+    {
+        return this.equityList.size();
+    }
+
+    public void afficherList()
+    {
+        for(int i=0;i<equityList.size();i++)
+        {
+            System.out.println(equityList.get(i));
+        }
+    }
+    public Equity findEquityByName(String nameEquityToFind)
+    {
+        for(int i=0;i<equityList.size();i++)
+        {
+           if(equityList.get(i).getName()== nameEquityToFind)
+           {
+               return equityList.get(i);
+           }
+
+        }
+        return null;
+    }
+
+    public Equity findEquityByTicker(String tickerToFind)
+    {
+        for(int i=0;i<equityList.size();i++)
+        {
+            if(equityList.get(i).getTicker()== tickerToFind)
+            {
+                return equityList.get(i);
+            }
+
+        }
+        return null;
+    }
+
+
 }

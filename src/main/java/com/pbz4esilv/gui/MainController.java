@@ -10,7 +10,7 @@ import java.util.List;
 public class MainController
 {
 
- 
+Index indexEquityMainControllerCAC40=new Index("CAC40",new Date());
 
     public void insertList(String indexName)
     {
@@ -96,7 +96,7 @@ public class MainController
         indexEquity.addEquity(valeo);
 
 
-
+        indexEquityMainControllerCAC40=indexEquity;
         System.out.println(indexEquity.toString());
     }
 
