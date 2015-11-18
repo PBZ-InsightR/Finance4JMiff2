@@ -1,4 +1,6 @@
 package com.pbz4esilv.model;
 
-public class IndexTest {
+public class IndexTest
+{
+
 }

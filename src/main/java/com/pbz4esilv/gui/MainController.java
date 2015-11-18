@@ -7,8 +7,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class MainController {
-    public void afficher(String indexName)
+public class MainController
+{
+
+ 
+
+    public void insertList(String indexName)
     {
         Equity accord= new Equity("accord","accord",0.0,0.0,null,0.0,0.0);
         Equity airLiquid= new Equity("airLiquid","airLiquid",0.0,0.0,null,0.0,0.0);

@@ -33,4 +33,9 @@ public class Index {
         }
         return value;
     }
+
+    public List<Equity> getList()
+    {
+        return equityList;  //retourne la liste
+    }
 }
