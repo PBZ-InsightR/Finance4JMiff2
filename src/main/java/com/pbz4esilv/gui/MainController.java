@@ -26,6 +26,7 @@ public class MainController {
         Equity edf = new Equity("edf","edf",0.0,0.0,null,0.0,0.0);
         Equity engie = new Equity("engie","engie",0.0,0.0,null,0.0,0.0);
         Equity essilor = new Equity("essilor","essilor",0.0,0.0,null,0.0,0.0);
+        Equity kering = new Equity("kering","kering",0.0,0.0,null,0.0,0.0);
 
 
 
@@ -49,6 +50,7 @@ public class MainController {
         indexEquity.addEquity(edf);
         indexEquity.addEquity(engie);
         indexEquity.addEquity(essilor);
+        indexEquity.addEquity(kering);
         System.out.println(indexEquity.toString());
     }
 
