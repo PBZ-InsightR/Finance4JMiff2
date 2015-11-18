@@ -52,7 +52,7 @@ public class Index {
             System.out.println(equityList.get(i));
         }
     }
-    public Equity findEquityByName(String nameEquityToFind)
+    public Equity findEquityByName(String nameEquityToFind)//de meme que pour findEquityByTicker mais pour le nom, la surcharge ne marche pas chez moi
     {
         for(int i=0;i<equityList.size();i++)
         {
@@ -65,13 +65,13 @@ public class Index {
         return null;
     }
 
-    public Equity findEquityByTicker(String tickerToFind)
+    public Equity findEquityByTicker(String tickerToFind)//recuperer l'equity de la liste par le ticker
     {
-        for(int i=0;i<equityList.size();i++)
+        for(int i=0;i<equityList.size();i++)//parcours de la liste
         {
-            if(equityList.get(i).getTicker()== tickerToFind)
+            if(equityList.get(i).getTicker()== tickerToFind)//si la correspondance est faite, unique ?
             {
-                return equityList.get(i);
+                return equityList.get(i);//on la retourne
             }
 
         }
