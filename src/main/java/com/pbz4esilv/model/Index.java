@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Index {
 
-    //Attribut
+    //Attributs
     private String name;
     private Date date;
     private List<Equity> equityList;
@@ -110,6 +110,4 @@ public class Index {
         }
         return 0;
     }
-
-
 }
