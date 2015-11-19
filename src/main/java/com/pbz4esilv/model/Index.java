@@ -95,7 +95,7 @@ public class Index {
         {
             if(equityList.get(i).getName()== nameEquity)//si la correspondance est faite, unique ?
             {
-                return equityList.get(i).getPrice();//on la retourne
+                return equityList.get(i).getPrice();//on retourne son prix
             }
 
         }
