@@ -77,11 +77,11 @@ public class Index {
         return null;
     }
 
-    public Equity findEquityByTicker(String tickerToFind)//recuperer l'equity de la liste par le ticker
+    public Equity findEquityByTicker(String tickerEquityToFind)//recuperer l'equity de la liste par le ticker
     {
         for(int i=0;i<equityList.size();i++)//parcours de la liste
         {
-            if(equityList.get(i).getTicker()== tickerToFind)//si la correspondance est faite, unique ?
+            if(equityList.get(i).getTicker()== tickerEquityToFind)//si la correspondance est faite, unique ?
             {
                 return equityList.get(i);//on la retourne
             }
