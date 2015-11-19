@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Equity {
 
+    //Attribut
     private String name;
     private String ticker;
     private double price;
@@ -12,6 +13,7 @@ public class Equity {
     private double dividend;
     private double weight;
 
+    //Constructeur
     public Equity(String name,String ticker, double price,double volatility, Date dateValuation, double dividend , double weight) {
         this.name = name ;
         this.ticker = ticker;
