@@ -41,4 +41,20 @@ public class Equity {
         return this.dividend;
     }
     public double getWeight() {return this.weight;}
+
+
+public int blackScholes(double price,double volatility,double weight,double X,double maturity)
+{
+   // int d1 = (Math.log(price/exercisePrice) +
+          //  (interest + Math.pow(volatility, 2)/2)*maturity)/(volatility*Math.sqrt(maturity));
+   // int  d2 = (Math.log(price/exercisePrice) +
+         //   (interest - Math.pow(volatility, 2)/2)*maturity)/(volatility*Math.sqrt(maturity));
+
+   // if(callSelected)
+       // result = (stockPrice*BlackScholes.normalCdf(d1)) -
+        //        (exercisePrice*Math.exp(-interest*maturity)*BlackScholes.normalCdf(d2));
+  //  else
+       // result = (exercisePrice*Math.exp(-interest*maturity)*BlackScholes.normalCdf(-d2))
+              //  - (stockPrice*BlackScholes.normalCdf(-d1));
+return 0;
 }
