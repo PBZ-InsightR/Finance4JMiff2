@@ -38,7 +38,7 @@ public class IndexTest {
         Index indexTest;
         indexTest=new Index("test",new Date());
         indexTest.addEquity(eqt);
-        Assert.assertTrue(indexTest.findEquityByTicker(tickerEquityToFind).getTicker()==tickerEquityToFind);//on verifie si le ticker de l'equity est bien celui ajouté
+        Assert.assertTrue(indexTest.findEquityByTicker(tickerEquityToFind).getTicker().equals(tickerEquityToFind));//on verifie si le ticker de l'equity est bien celui ajouté
     }
 
 }
