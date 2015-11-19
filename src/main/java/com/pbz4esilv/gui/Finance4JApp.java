@@ -1,5 +1,6 @@
 package com.pbz4esilv.gui;
 
+import com.pbz4esilv.model.Equity;
 import com.pbz4esilv.model.Index;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -31,18 +32,22 @@ public class Finance4JApp extends Application {
         HBox hbox = (HBox) mainPane.getChildren().get(0);
 
         comboBox = (ComboBox<String>) hbox.getChildren().get(0);
-   //for(int i=0;i<mainController.indexEquityMainControllerCAC40.getSize();i++)
- //  {
-       //Pour afficher l'ensemble de la list du cac40, reprise dans la classe Index/equity
-   //}
+
+
+
+        for(Equity elem : mainController.indexEquityMainControllerCAC40.getList())
+        {
+            comboBox.getItems().add(elem.getName());
+        }
+
         comboBox.getItems().add("CAC 40");
         comboBox.getItems().add("SBF120");
 
         loadButton = (Button) hbox.getChildren().get(1);
+
         loadButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-               mainController.insertList(comboBox.getValue());
             }
         });
 
