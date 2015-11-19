@@ -39,7 +39,7 @@ public class Equity {
     }                    //Retourne la volatility de l'action
     public Date getDateValuation() {
         return this.dateValuation;
-    }
+    }                //Retourne date
     public double getDividend() {
         return this.dividend;
     }                 //Retourne le nombre de dividende de l'action
