@@ -1,5 +1,6 @@
 package com.pbz4esilv.gui;
 
+import com.pbz4esilv.model.Index;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -11,11 +12,11 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+
 import java.io.IOException;
 
 public class Finance4JApp extends Application {
     MainController mainController;
-
     ComboBox<String> comboBox;
     Button loadButton;
 
@@ -30,6 +31,10 @@ public class Finance4JApp extends Application {
         HBox hbox = (HBox) mainPane.getChildren().get(0);
 
         comboBox = (ComboBox<String>) hbox.getChildren().get(0);
+   //for(int i=0;i<mainController.indexEquityMainControllerCAC40.getSize();i++)
+ //  {
+       //Pour afficher l'ensemble de la list du cac40, reprise dans la classe Index/equity
+   //}
         comboBox.getItems().add("CAC 40");
         comboBox.getItems().add("SBF120");
 
@@ -37,7 +42,7 @@ public class Finance4JApp extends Application {
         loadButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-               mainController.afficher(comboBox.getValue());
+               mainController.insertList(comboBox.getValue());
             }
         });
 
