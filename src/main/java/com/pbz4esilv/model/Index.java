@@ -6,12 +6,14 @@ import java.util.List;
 
 
 public class Index {
+
+    //Attribut
     private String name;
     private Date date;
     private List<Equity> equityList;
     private double value;
 
-
+    //Constructeur
     public Index(String name, Date date){
         this.name = name;
         this.date = date;
@@ -19,10 +21,12 @@ public class Index {
 
     }
 
+    //Ajoute une equity à l'attribut liste
     public void addEquity(Equity equity){
         equityList.add(equity);
     }
 
+    //Supprime une equity de l'attribut liste
     public void deleteEquity(Equity equity)
     {
         for(int i=0;i<equityList.size();i++)
@@ -35,7 +39,7 @@ public class Index {
         }
     }
 
-
+    //Retourne les information de toute les equity de l'index dans un string
     @Override
     public String toString(){
         String value = name;
@@ -47,11 +51,14 @@ public class Index {
         return value;
     }
 
+    //retourne la liste
     public List<Equity> getList()
     {
 
-        return this.equityList;  //retourne la liste
+        return this.equityList;
     }
+
+    //Retourne le nombre d'élément de la liste
     public int getSize()
     {
         return this.equityList.size();
@@ -64,6 +71,8 @@ public class Index {
             System.out.println(equityList.get(i));//a modifer avec l'API, on est pas dans la console
         }
     }
+
+
     public Equity findEquityByName(String nameEquityToFind)//de meme que pour findEquityByTicker mais pour le nom, la surcharge ne marche pas chez moi
     {
         for(int i=0;i<equityList.size();i++)
