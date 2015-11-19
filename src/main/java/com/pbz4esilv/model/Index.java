@@ -23,6 +23,18 @@ public class Index {
         equityList.add(equity);
     }
 
+    public void deleteEquity(Equity equity)
+    {
+        for(int i=0;i<equityList.size();i++)
+        {
+            if(equityList.get(i).getName()== equity.getName())
+            {
+                equityList.remove(i);
+            }
+
+        }
+    }
+
 
     @Override
     public String toString(){
@@ -49,7 +61,7 @@ public class Index {
     {
         for(int i=0;i<equityList.size();i++)
         {
-            System.out.println(equityList.get(i));
+            System.out.println(equityList.get(i));//a modifer avec l'API, on est pas dans la console
         }
     }
     public Equity findEquityByName(String nameEquityToFind)//de meme que pour findEquityByTicker mais pour le nom, la surcharge ne marche pas chez moi
