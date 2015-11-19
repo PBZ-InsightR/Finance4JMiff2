@@ -95,7 +95,7 @@ public class Index {
         {
             if(equityList.get(i).getName()== nameEquityorTicker ||equityList.get(i).getTicker()== nameEquityorTicker)//si la correspondance est faite
             {
-                return equityList.get(i).getPrice();//on retourne son prix
+                return equityList.get(i).getPrice();//on retourne son prix.
             }
 
         }
