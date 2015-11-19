@@ -43,7 +43,7 @@ public class Equity {
     public double getWeight() {return this.weight;}
 
 
-public int blackScholes(double price,double volatility,double weight,double X,double maturity)
+public int blackScholes(double price,double volatility,double weight,double X,double maturity)//pricer blacksholes
 {
    // int d1 = (Math.log(price/exercisePrice) +
           //  (interest + Math.pow(volatility, 2)/2)*maturity)/(volatility*Math.sqrt(maturity));
