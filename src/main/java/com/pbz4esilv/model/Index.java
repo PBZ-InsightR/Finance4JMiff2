@@ -89,11 +89,11 @@ public class Index {
         }
         return null;
     }
-    public double findEquityPrice(String nameEquity)//recuperer le prix de  l'equity de la liste
+    public double findEquityPrice(String nameEquityorTicker)//recuperer le prix de  l'equity de la liste
     {
         for(int i=0;i<equityList.size();i++)//parcours de la liste
         {
-            if(equityList.get(i).getName()== nameEquity)//si la correspondance est faite
+            if(equityList.get(i).getName()== nameEquityorTicker ||equityList.get(i).getTicker()== nameEquityorTicker)//si la correspondance est faite
             {
                 return equityList.get(i).getPrice();//on retourne son prix
             }
