@@ -39,6 +39,6 @@ public class Equity {
     }       //retourne la date
     public double getDividend() {
         return this.dividend;
-    }               //retourne le nombre de dividende
+    }               //retourne le nombre de dividendes
     public double getWeight() {return this.weight;}                     //retourne le volume
 }
