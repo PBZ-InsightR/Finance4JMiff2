@@ -46,7 +46,7 @@ public class Equity {
     public double getWeight() {return this.weight;}                     //retourne le volume
 
 
-
+    //loi gaussienne
     private double nextNextGaussian;
     private boolean haveNextNextGaussian = false;
     synchronized public double nextGaussian() {
