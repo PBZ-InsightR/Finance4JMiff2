@@ -13,7 +13,7 @@ public class IndexTest {
         indexTest = new Index("test",new Date());
         indexTest.addEquity(eqt);
 
-        Assert.assertTrue(java.util.ArrayList.isNotEmpty(IndexTest));//verifier si la liste n'est pas vide
+        Assert.assertTrue(java.util.ArrayList.isNotEmpty(indexTest));//verifier si la liste n'est pas vide
     }
     public void testGetSize()
     {
@@ -39,5 +39,13 @@ public class IndexTest {
         indexTest.addEquity(eqt);
         Assert.assertTrue(indexTest.findEquityByTicker(tickerEquityToFind).getTicker()==tickerEquityToFind);//on verifie si le ticker de l'equity est bien celui ajouté
     }
-
+    public void testFindEquityPrice(String nameEquity)
+    {
+        Equity eqt;
+        eqt = new Equity("test","tst",10.0,0.0,null,0.0,0.0);
+        Index indexTest;
+        indexTest=new Index("test",new Date());
+        indexTest.addEquity(eqt);
+        Assert.assertTrue(indexTest.findEquityPrice("test")==10.0);//on verifie si le prix de l'equity est bien celui annoncé
+    }
 }

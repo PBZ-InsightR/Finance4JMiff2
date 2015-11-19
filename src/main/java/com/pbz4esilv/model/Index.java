@@ -22,10 +22,6 @@ public class Index {
     public void addEquity(Equity equity){
         equityList.add(equity);
     }
-    public void add_equity(Equity un){
-        this.equityList.add(un);
-
-    }
 
 
     @Override
@@ -80,6 +76,18 @@ public class Index {
 
         }
         return null;
+    }
+    public double findEquityPrice(String nameEquity)//recuperer le prix de  l'equity de la liste
+    {
+        for(int i=0;i<equityList.size();i++)//parcours de la liste
+        {
+            if(equityList.get(i).getName()== nameEquity)//si la correspondance est faite, unique ?
+            {
+                return equityList.get(i).getPrice();//on la retourne
+            }
+
+        }
+        return 0;
     }
 
 
