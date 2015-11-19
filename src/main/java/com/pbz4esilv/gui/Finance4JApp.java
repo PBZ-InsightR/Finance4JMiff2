@@ -14,10 +14,13 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 
+import javax.swing.*;
 import java.io.IOException;
 
 public class Finance4JApp extends Application {
+
     MainController mainController;
+
     ComboBox<String> comboBox;
     Button loadButton;
 
@@ -26,15 +29,12 @@ public class Finance4JApp extends Application {
     public void start(Stage primaryStage) throws IOException {
 
         mainController = new MainController();
-
         Pane mainPane = FXMLLoader.load(getClass().getResource("Finance4J.fxml"));
-
         HBox hbox = (HBox) mainPane.getChildren().get(0);
-
         comboBox = (ComboBox<String>) hbox.getChildren().get(0);
 
 
-
+        //affiche tout les élément de l'index dans la combo box
         for(Equity elem : mainController.indexEquityMainControllerCAC40.getList())
         {
             comboBox.getItems().add(elem.getName());
@@ -44,10 +44,13 @@ public class Finance4JApp extends Application {
         comboBox.getItems().add("SBF120");
 
         loadButton = (Button) hbox.getChildren().get(1);
+        loadButton.setText("LOAD");
 
         loadButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                System.out.println("Hello World!");
+                System.out.println(mainController.indexEquityMainControllerCAC40.toString());
             }
         });
 
