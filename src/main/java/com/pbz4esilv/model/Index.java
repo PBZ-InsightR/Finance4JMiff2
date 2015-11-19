@@ -93,7 +93,7 @@ public class Index {
     {
         for(int i=0;i<equityList.size();i++)//parcours de la liste
         {
-            if(equityList.get(i).getName()== nameEquity)//si la correspondance est faite, unique ?
+            if(equityList.get(i).getName()== nameEquity)//si la correspondance est faite
             {
                 return equityList.get(i).getPrice();//on retourne son prix
             }
