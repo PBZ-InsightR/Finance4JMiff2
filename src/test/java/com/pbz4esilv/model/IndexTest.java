@@ -10,7 +10,7 @@ public class IndexTest {
     @Test
     public void testAddEquity() throws Exception {
         Date d1= new Date() ;
-        Equity equity = new Equity("AXA","axa",100,20,d1,10000,1 )
+        Equity equity = new Equity("AXA","axa",100,20,d1,10000,1 );
         Index indexTest;
         indexTest = new Index("test",new Date());
         indexTest.addEquity(equity);
@@ -26,9 +26,10 @@ public class IndexTest {
         Assert.assertEquals(1,indexTest.getSize());
     }
     @Test
-    public void testFindEquityByName(String nameEquityToFindTest) throws Exception
+    public void testFindEquityByName() throws Exception
     {
         Equity eqt;
+        String nameEquityToFindTest = "AXA";
         eqt = new Equity(nameEquityToFindTest,"test",0.0,0.0,null,0.0,0.0);
         Index indexTest;
         indexTest=new Index("test",new Date());
