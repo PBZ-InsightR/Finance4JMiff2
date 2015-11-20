@@ -8,42 +8,36 @@ import java.util.Date;
 public class IndexTest {
 
     @Test
-    public void testAddEquity() throws Exception {
+    public void testAddEquity(Equity eqt) throws Exception {
         Index indexTest;
         indexTest = new Index("test",new Date());
-
         indexTest.addEquity(eqt);
 
         //Assert.assertTrue(java.util.ArrayList.isNotEmpty(IndexTest));//verifier si la liste n'est pas vide
     }
-    @Test
-    public void testGetSize()
+    public void GetSize()
     {
         Index indexTest;
         indexTest=new Index("test",new Date());
-        Equity eqt=new Equity("test","test",0.0,0.0,null,0.0,0.0);
-        indexTest.addEquity(eqt);
         Assert.assertEquals(1,indexTest.getSize());
     }
-    @Test
-    public void testFindEquityByName()
+    public void FindEquityByName(String nameEquityToFindTest)
     {
         Equity eqt;
-        eqt = new Equity("test","test",0.0,0.0,null,0.0,0.0);
+        eqt = new Equity(nameEquityToFindTest,"test",0.0,0.0,null,0.0,0.0);
         Index indexTest;
         indexTest=new Index("test",new Date());
         indexTest.addEquity(eqt);
-        Assert.assertTrue(indexTest.findEquityByName(eqt.getName()).getName()==eqt.getName());//on verifie si le nom de l'equity est bien celui ajouté
+        Assert.assertTrue(indexTest.findEquityByName(nameEquityToFindTest).getName()==nameEquityToFindTest);//on verifie si le nom de l'equity est bien celui ajouté
     }
-    @Test
-    public void testFindEquityByTicker()
+    public void FindEquityByTicker(String tickerEquityToFind)
     {
         Equity eqt;
-        eqt = new Equity("test","test",0.0,0.0,null,0.0,0.0);
+        eqt = new Equity("test",tickerEquityToFind,0.0,0.0,null,0.0,0.0);
         Index indexTest;
         indexTest=new Index("test",new Date());
         indexTest.addEquity(eqt);
-        Assert.assertTrue(indexTest.findEquityByTicker(eqt.getTicker()).getTicker()==eqt.getTicker());//on verifie si le ticker de l'equity est bien celui ajouté
+        Assert.assertTrue(indexTest.findEquityByTicker(tickerEquityToFind).getTicker()==tickerEquityToFind);//on verifie si le ticker de l'equity est bien celui ajouté
     }
 
 }
