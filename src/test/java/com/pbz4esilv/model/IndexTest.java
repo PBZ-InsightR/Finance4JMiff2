@@ -37,9 +37,10 @@ public class IndexTest {
         Assert.assertTrue(indexTest.findEquityByName(nameEquityToFindTest).equals(nameEquityToFindTest));//on verifie si le nom de l'equity est bien celui ajouté
     }
     @Test
-    public void testFindEquityByTicker(String tickerEquityToFind) throws Exception
+    public void testFindEquityByTicker() throws Exception
     {
         Equity eqt;
+        String tickerEquityToFind = "axa";
         eqt = new Equity("test",tickerEquityToFind,0.0,0.0,null,0.0,0.0);
         Index indexTest;
         indexTest=new Index("test",new Date());
