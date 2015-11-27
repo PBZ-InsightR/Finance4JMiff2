@@ -76,7 +76,7 @@ public class Equity {
     }                   //retourne le symbole
     public double getVolatility() {
         return this.volatility;
-    }           //retourne la volatilit�
+    }           //retourne la volatilite
     public Date getDateValuation() {
         return this.dateValuation;
     }       //retourne la date
@@ -126,5 +126,7 @@ public class Equity {
         double mean = sum / N;
         return Math.exp(-r*T) * mean;
     }
+
+
 }
 
