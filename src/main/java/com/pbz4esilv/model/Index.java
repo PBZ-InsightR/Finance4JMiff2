@@ -193,11 +193,11 @@ public class Index {
         return null;
     }
 
-    public double findEquityPrice(String nameEquity)//recuperer le prix de  l'equity de la liste
+    public double findEquityPrice(String nameEquityorTicker)//recuperer le prix de  l'equity de la liste
     {
         for(Equity elem : equityList )//parcours de la liste
         {
-            if(elem.getName()== nameEquity)//si la correspondance est faite, unique ?
+            if(elem.getName()== nameEquityorTicker||elem.getTicker()== nameEquityorTicker)//si la correspondance est faite
             {
                 return elem.getPrice();//on retourne son prix
             }
