@@ -12,61 +12,88 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import javafx.util.Callback;
 
 
 import javax.swing.*;
 import java.io.IOException;
+import java.util.*;
 
 public class Finance4JApp extends Application {
 
-    MainController mainController;
+    static class XCell extends ListCell<String> {
+        HBox hbox = new HBox();
+        Label label = new Label("(empty)");
+        Pane pane = new Pane();
+        Button button = new Button("(>)");
+        String lastItem;
 
-    ComboBox<String> comboBox;
-    Button loadButton;
-
-
-    @Override
-    public void start(Stage primaryStage) throws IOException {
-
-        mainController = new MainController();
-        Pane mainPane = FXMLLoader.load(getClass().getResource("Finance4J.fxml"));
-        HBox hbox = (HBox) mainPane.getChildren().get(0);
-
-        comboBox = (ComboBox<String>) hbox.getChildren().get(0);
-
-
-        //affiche tout les élément de l'index dans la combo box
-        for(Equity elem : mainController.indexEquityMainControllerCAC40.getList())
-        {
-            comboBox.getItems().add(elem.getName());
+        public XCell() {
+            super();
+            hbox.getChildren().addAll(label, pane, button);
+            HBox.setHgrow(pane, Priority.ALWAYS);
+            button.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    System.out.println(lastItem + " : " + event);
+                }
+            });
         }
 
-        comboBox.getItems().add("CAC 40");
-        comboBox.getItems().add("SBF120");
-
-        loadButton = (Button) hbox.getChildren().get(1);
-        loadButton.setText("LOAD");
-
-        loadButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-                System.out.println(mainController.indexEquityMainControllerCAC40.toString());
+        @Override
+        protected void updateItem(String item, boolean empty) {
+            super.updateItem(item, empty);
+            setText(null);  // No text in label of super class
+            if (empty) {
+                lastItem = null;
+                setGraphic(null);
+            } else {
+                lastItem = item;
+                label.setText(item != null ? item : "<null>");
+                setGraphic(hbox);
             }
-        });
-
-        Scene scene = new Scene(mainPane, 1000, 700);
-
-        primaryStage.setTitle("Index Equity MIF2");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        }
     }
 
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        StackPane pane = new StackPane();
+        Scene scene = new Scene(pane, 300, 150);
+        primaryStage.setScene(scene);
+        ObservableList<String> list = FXCollections.observableArrayList();
+        Index indexEquityMainControllerCAC40 =new Index("CAC40",new Date(),1);
+        for(final Equity x: indexEquityMainControllerCAC40.getList()) {
+            list.add(x.getName());
+
+        }
+            ListView<String> lv = new ListView<>(list);
+        lv.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
+            @Override
+            public ListCell<String> call(ListView<String> param) {
+                return new XCell();
+            }
+        });
+        pane.getChildren().add(lv);
+        primaryStage.show();
+    }
 
     public static void main(String[] args) {
         launch(args);
     }
-
-
-
 }
+
