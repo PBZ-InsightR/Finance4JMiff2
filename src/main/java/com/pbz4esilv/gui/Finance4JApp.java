@@ -2,6 +2,7 @@ package com.pbz4esilv.gui;
 
 import com.pbz4esilv.model.Equity;
 import com.pbz4esilv.model.Index;
+import com.sun.org.apache.xpath.internal.operations.*;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -32,15 +33,18 @@ import javafx.util.Callback;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.lang.String;
 import java.util.*;
 
 public class Finance4JApp extends Application {
 
     static class XCell extends ListCell<String> {
+
         List<Equity> listeq;
         HBox hbox = new HBox();
         Label label = new Label("(empty)");
         Label label2= new Label("(empty)");
+        Label label3= new Label("(empty)");
         Pane pane = new Pane();
         Button button = new Button("(>)");
         Button button2 = new Button("(>)");
@@ -48,20 +52,9 @@ public class Finance4JApp extends Application {
 
         public XCell(List<Equity> listeq) {
             super();
-            System.out.println(lastItem+"1");
-            /*for(final Equity x: listeq) {
-                //if(lastItem==x.getName()) {
-                    System.out.println(label);
-                    String value = x.getTicker();
-                    label2.setText(value);
-               // }
-
-            }*/
             this.listeq=listeq;
-            hbox.getChildren().addAll(label, label2, pane, button, button2);
-            System.out.println(lastItem+"2");
+            hbox.getChildren().addAll(label, label2,label3, pane, button, button2);
             HBox.setHgrow(pane, Priority.ALWAYS);
-            System.out.println(lastItem+"3");
             button.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -81,15 +74,15 @@ public class Finance4JApp extends Application {
                 lastItem = item;
                 label.setText(item != null ? item : "<null>");
 
-                for(final Equity x: listeq) {
-                    if(Objects.equals(item, x.getName()))
-                    {
-                    System.out.println(label);
-                    String value = x.getTicker();
-                    label2.setText(" Ticker : "+value);
+                for(final Equity x: listeq)
+                    if (Objects.equals(item, x.getName())) {
+                        System.out.println(label);
+                        String value = x.getTicker();
+                        String value2;
+                        value2 = String.valueOf(x.getPrice());
+                        label2.setText(", Ticker : " + value);
+                        label3.setText(", Price : " + value2);
                     }
-
-                }
                 setGraphic(hbox);
             }
         }
