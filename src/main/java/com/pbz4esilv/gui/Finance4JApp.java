@@ -37,7 +37,7 @@ import java.util.*;
 public class Finance4JApp extends Application {
 
     static class XCell extends ListCell<String> {
-        Equity eq;
+        List<Equity> listeq;
         HBox hbox = new HBox();
         Label label = new Label("(empty)");
         Label label2= new Label("(empty)");
@@ -49,14 +49,15 @@ public class Finance4JApp extends Application {
         public XCell(List<Equity> listeq) {
             super();
             System.out.println(lastItem+"1");
-            for(final Equity x: listeq) {
+            /*for(final Equity x: listeq) {
                 //if(lastItem==x.getName()) {
                     System.out.println(label);
                     String value = x.getTicker();
                     label2.setText(value);
                // }
 
-            }
+            }*/
+            this.listeq=listeq;
             hbox.getChildren().addAll(label, label2, pane, button, button2);
             System.out.println(lastItem+"2");
             HBox.setHgrow(pane, Priority.ALWAYS);
@@ -70,15 +71,25 @@ public class Finance4JApp extends Application {
         }
 
         @Override
-        protected void updateItem(String item, boolean empty) {
+        public void updateItem(String item, boolean empty) {
             super.updateItem(item, empty);
-            setText(null);  // No text in label of super class
+            label.setText(null);  // No text in label of super class
             if (empty) {
                 lastItem = null;
                 setGraphic(null);
             } else {
                 lastItem = item;
                 label.setText(item != null ? item : "<null>");
+
+                for(final Equity x: listeq) {
+                    if(Objects.equals(item, x.getName()))
+                    {
+                    System.out.println(label);
+                    String value = x.getTicker();
+                    label2.setText(" Ticker : "+value);
+                    }
+
+                }
                 setGraphic(hbox);
             }
         }
