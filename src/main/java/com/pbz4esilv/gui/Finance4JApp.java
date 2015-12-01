@@ -37,16 +37,30 @@ import java.util.*;
 public class Finance4JApp extends Application {
 
     static class XCell extends ListCell<String> {
+        Equity eq;
         HBox hbox = new HBox();
         Label label = new Label("(empty)");
+        Label label2= new Label("(empty)");
         Pane pane = new Pane();
         Button button = new Button("(>)");
+        Button button2 = new Button("(>)");
         String lastItem;
 
-        public XCell() {
+        public XCell(List<Equity> listeq) {
             super();
-            hbox.getChildren().addAll(label, pane, button);
+            System.out.println(lastItem+"1");
+            for(final Equity x: listeq) {
+                //if(lastItem==x.getName()) {
+                    System.out.println(label);
+                    String value = x.getTicker();
+                    label2.setText(value);
+               // }
+
+            }
+            hbox.getChildren().addAll(label, label2, pane, button, button2);
+            System.out.println(lastItem+"2");
             HBox.setHgrow(pane, Priority.ALWAYS);
+            System.out.println(lastItem+"3");
             button.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -85,7 +99,7 @@ public class Finance4JApp extends Application {
         lv.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
             @Override
             public ListCell<String> call(ListView<String> param) {
-                return new XCell();
+                return new XCell(indexEquityMainControllerCAC40.getList());
             }
         });
         pane.getChildren().add(lv);

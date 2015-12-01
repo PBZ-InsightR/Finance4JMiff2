@@ -3,7 +3,7 @@ package com.pbz4esilv.Controller;
 /**
  * Created by khaled on 27/11/2015.
  */
-        import com.mongodb.MongoClient;
+ /*       import com.mongodb.MongoClient;
         import com.mongodb.MongoClientURI;
         import com.mongodb.client.MongoCollection;
         import com.mongodb.client.FindIterable;
@@ -99,4 +99,4 @@ public class ControllerMongoDB {
     }
 
 }
-
+*/
