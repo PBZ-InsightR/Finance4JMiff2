@@ -1,0 +1,29 @@
+package com.sdesilv4.gui;
+import javax.swing.*;
+import javax.swing.JFrame;
+
+/**
+ * Created by Amine on 18/12/2015.
+ */
+public class TableauIndice extends JFrame{
+
+    public TableauIndice(){
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("JTable");
+        this.setSize(700, 180);
+        this.setLocationRelativeTo(null);
+
+        Object[][] valeur = {
+                //Exemple de valeurs possibles
+                {"Renault", "RNO", "91,92", "0,55%", "1 534 786", "18/12/15"},
+                {"CREDIT AGRICOLE SA", "ACA", "10.570", "-0.75%","27 897.69", "18/12/15" },
+                {"Alstom", "ALO", "27,505", "1,05%", "2 219 831", "18/12/15"}
+
+        };
+
+        String indiceTitle[] = {"Indice", "Symbole", "Prix","Variation(%)","Volume", "date"};
+
+        JTable tableauIndice = new JTable(valeur, indiceTitle);
+        this.getContentPane().add(new JScrollPane(tableauIndice));
+        tableauIndice.setVisible(true);
