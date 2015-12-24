@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pbz4esilv.gui.PalmaresController">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="1300.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TabPane layoutY="23.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="650.0" prefWidth="1300.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Vue d'ensemble">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="585.0" prefWidth="1300.0">
+                     <children>
+                        <TableView fx:id="overviewTableView" layoutX="9.0" layoutY="100.0" prefHeight="485.0" prefWidth="1280.0">
+                          <columns>
+                            <TableColumn fx:id="noColumn" prefWidth="60.0" text="No." />
+                            <TableColumn fx:id="tickerColumn" prefWidth="110.0" text="Ticker" />
+                              <TableColumn fx:id="companyColumn" prefWidth="265.0" text="Company" />
+                              <TableColumn fx:id="dividendYieldColumn" minWidth="0.0" prefWidth="193.0" text="Dividend Yield" />
+                              <TableColumn fx:id="performanceYearColumn" minWidth="0.0" prefWidth="187.0" text="Performance (Year)" />
+                              <TableColumn fx:id="priceColumn" prefWidth="155.0" text="Price" />
+                              <TableColumn fx:id="changeColumn" prefWidth="100.0" text="Change" />
+                              <TableColumn fx:id="volumeColumn" prefWidth="210.0" text="Volume" />
+                          </columns>
+                        </TableView>
+                        <GridPane layoutX="16.0" layoutY="14.0" prefHeight="80.0" prefWidth="1264.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Country :" />
+                              <ChoiceBox fx:id="countryChoiceBox" prefHeight="25.0" prefWidth="200.0">
+                                 <GridPane.margin>
+                                    <Insets left="60.0" />
+                                 </GridPane.margin>
+                              </ChoiceBox>
+                              <ChoiceBox fx:id="sectorChoiceBox" prefHeight="25.0" prefWidth="250.0" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="60.0" />
+                                 </GridPane.margin>
+                              </ChoiceBox>
+                              <Label text="Sector :" GridPane.columnIndex="1" />
+                              <Label text="Industry :" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <ChoiceBox fx:id="industryChoiceBox" prefHeight="25.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="60.0" />
+                                 </GridPane.margin>
+                              </ChoiceBox>
+                              <Label text="Price :" GridPane.rowIndex="1" />
+                              <ChoiceBox fx:id="priceChoiceBox" prefHeight="25.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="60.0" />
+                                 </GridPane.margin>
+                              </ChoiceBox>
+                              <Button mnemonicParsing="false" onAction="#handleApply" prefHeight="25.0" prefWidth="327.0" text="Apply" GridPane.columnIndex="3" />
+                              <Button mnemonicParsing="false" onAction="#handleReset" prefHeight="25.0" prefWidth="327.0" text="Reset" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                        <Label fx:id="resultLabel" layoutX="9.0" layoutY="590.0" prefHeight="17.0" prefWidth="140.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="A. Fondamentale">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="585.0" prefWidth="1300.0">
+                     <children>
+                        <TableView fx:id="fundamentalTableView" layoutX="9.0" layoutY="100.0" prefHeight="480.0" prefWidth="1280.0">
+                           <columns>
+                              <TableColumn fx:id="noColumn1" prefWidth="60.0" text="No." />
+                              <TableColumn fx:id="tickerColumn1" prefWidth="110.0" text="Ticker" />
+                              <TableColumn fx:id="companyColumn1" prefWidth="265.0" text="Company" />
+                              <TableColumn fx:id="currentRatioColumn1" minWidth="0.0" prefWidth="193.0" text="Current Ratio" />
+                              <TableColumn fx:id="lTDebtEquityColumn1" minWidth="0.0" prefWidth="130.0" text="LT Debt/Equity" />
+                              <TableColumn fx:id="returnOnInvestmentColumn1" prefWidth="150.0" text="Return on Investment" />
+                              <TableColumn fx:id="ePSGrowthNext5YearsColumn1" prefWidth="162.0" text="EPS growth next 5 years" />
+                              <TableColumn fx:id="EPSGrowthQuarterOverQuarterColumn1" prefWidth="210.0" text="EPS growth quarter over quarter " />
+                           </columns>
+                        </TableView>
+                        <GridPane layoutX="16.0" layoutY="14.0" prefHeight="80.0" prefWidth="1264.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Country :" />
+                              <ChoiceBox fx:id="countryChoiceBox1" prefHeight="25.0" prefWidth="200.0">
+                                 <GridPane.margin>
+                                    <Insets left="60.0" />
+                                 </GridPane.margin>
+                              </ChoiceBox>
+                              <ChoiceBox fx:id="sectorChoiceBox1" prefHeight="25.0" prefWidth="250.0" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="60.0" />
+                                 </GridPane.margin>
+                              </ChoiceBox>
+                              <Label text="Sector :" GridPane.columnIndex="1" />
+                              <Label text="Industry :" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <ChoiceBox fx:id="industryChoiceBox1" prefHeight="25.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="60.0" />
+                                 </GridPane.margin>
+                              </ChoiceBox>
+                              <Label text="Price :" GridPane.rowIndex="1" />
+                              <ChoiceBox fx:id="priceChoiceBox1" prefHeight="25.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="60.0" />
+                                 </GridPane.margin>
+                              </ChoiceBox>
+                              <Button mnemonicParsing="false" onAction="#handleApply1" prefHeight="25.0" prefWidth="327.0" text="Apply" GridPane.columnIndex="3" />
+                              <Button mnemonicParsing="false" onAction="#handleReset1" prefHeight="25.0" prefWidth="327.0" text="Reset" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                        <Label fx:id="resultLabel1" layoutX="9.0" layoutY="590.0" prefHeight="17.0" prefWidth="140.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+            <Tab text="A. Technique">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="585.0" prefWidth="1300.0">
+                     <children>
+                        <TableView fx:id="technicalTableView" layoutX="9.0" layoutY="100.0" prefHeight="480.0" prefWidth="1280.0">
+                           <columns>
+                              <TableColumn fx:id="noColumn2" prefWidth="60.0" text="No." />
+                              <TableColumn fx:id="tickerColumn2" prefWidth="110.0" text="Ticker" />
+                              <TableColumn fx:id="companyColumn2" prefWidth="265.0" text="Company" />
+                              <TableColumn fx:id="gapColumn2" minWidth="0.0" prefWidth="129.0" text="Gap" />
+                              <TableColumn fx:id="performanceYearColumn2" minWidth="0.0" prefWidth="168.0" text="Performance (Year)" />
+                              <TableColumn fx:id="volatilityMonthColumn2" prefWidth="175.0" text="Volatility (Month)" />
+                              <TableColumn fx:id="_20DaySimpleMovingAverageColumn2" prefWidth="209.0" text="20-Day Simple Moving Average" />
+                              <TableColumn fx:id="_50DayLowColumn2" prefWidth="164.0" text="50-Day Low" />
+                           </columns>
+                        </TableView>
+                        <GridPane layoutX="16.0" layoutY="14.0" prefHeight="80.0" prefWidth="1264.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Country :" />
+                              <ChoiceBox fx:id="countryChoiceBox2" prefHeight="25.0" prefWidth="200.0">
+                                 <GridPane.margin>
+                                    <Insets left="60.0" />
+                                 </GridPane.margin>
+                              </ChoiceBox>
+                              <ChoiceBox fx:id="sectorChoiceBox2" prefHeight="25.0" prefWidth="250.0" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="60.0" />
+                                 </GridPane.margin>
+                              </ChoiceBox>
+                              <Label text="Sector :" GridPane.columnIndex="1" />
+                              <Label text="Industry :" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <ChoiceBox fx:id="industryChoiceBox2" prefHeight="25.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="60.0" />
+                                 </GridPane.margin>
+                              </ChoiceBox>
+                              <Label text="Price :" GridPane.rowIndex="1" />
+                              <ChoiceBox fx:id="priceChoiceBox2" prefHeight="25.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="60.0" />
+                                 </GridPane.margin>
+                              </ChoiceBox>
+                              <Button mnemonicParsing="false" onAction="#handleApply2" prefHeight="25.0" prefWidth="327.0" text="Apply" GridPane.columnIndex="3" />
+                              <Button mnemonicParsing="false" onAction="#handleReset2" prefHeight="25.0" prefWidth="327.0" text="Reset" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                        <Label fx:id="resultLabel2" layoutX="9.0" layoutY="590.0" prefHeight="17.0" prefWidth="140.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Statistiques">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="635.0" prefWidth="1300.0">
+                     <children>
+                        <GridPane layoutY="10.0" prefHeight="80.0" prefWidth="1264.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="26.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Country :" />
+                              <ChoiceBox fx:id="countryChoiceBox3" prefHeight="25.0" prefWidth="251.0">
+                                 <GridPane.margin>
+                                    <Insets left="60.0" />
+                                 </GridPane.margin>
+                              </ChoiceBox>
+                              <ChoiceBox fx:id="sectorChoiceBox3" prefHeight="25.0" prefWidth="250.0" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="60.0" />
+                                 </GridPane.margin>
+                              </ChoiceBox>
+                              <Label text="Sector :" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#handleApply3" prefHeight="25.0" prefWidth="327.0" text="Apply" GridPane.columnIndex="3" />
+                              <Button mnemonicParsing="false" onAction="#handleReset3" prefHeight="25.0" prefWidth="327.0" text="Reset" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                        <Separator layoutX="782.0" layoutY="102.0" orientation="VERTICAL" prefHeight="333.0" prefWidth="0.0" />
+                        <GridPane layoutX="20.0" layoutY="138.0" prefHeight="300.0" prefWidth="370.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="178.0" minWidth="10.0" prefWidth="151.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="10.0" prefWidth="214.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Plus fort volume :">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Plus forte performance :" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Plus grosse capitalisation :" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Industrie porteuse :" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="plusFortVolume" textFill="#186100" GridPane.columnIndex="1" />
+                              <Label fx:id="plusFortePerf" textFill="#186100" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="plusForteCap" textFill="#186100" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label fx:id="industriePorteuse" textFill="#186100" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                        <GridPane layoutX="400.0" layoutY="135.0" prefHeight="300.0" prefWidth="370.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="178.0" minWidth="10.0" prefWidth="152.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="229.0" minWidth="10.0" prefWidth="219.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Plus faible volume :">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Plus faible performance :" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Plus faible capitalisation :" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Industrie inerte :" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="plusFaibleVolume" textFill="RED" GridPane.columnIndex="1" />
+                              <Label fx:id="plusFaiblePerf" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="plusFaibleCap" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label fx:id="industrieInerte" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                        <Separator layoutX="17.0" layoutY="435.0" prefHeight="0.0" prefWidth="765.0" />
+                        <Label layoutX="20.0" layoutY="438.0" text="Statégies d'Investissement (Bonus $)" textFill="#6200ff">
+                           <font>
+                              <Font size="31.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="20.0" layoutY="491.0" text="Titre à acheter :" textFill="#186100">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="20.0" layoutY="523.0" text="Titre à vendre :" textFill="RED">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="titreConseille" layoutX="175.0" layoutY="491.0" textFill="#186100">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="titreAEviter" layoutX="175.0" layoutY="523.0" textFill="RED">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="17.0" layoutY="118.0" text="Compagnie ayant le (la):" textFill="#1207f2">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <PieChart fx:id="marketCapPieChart" layoutX="788.0" layoutY="107.0" prefHeight="500.0" prefWidth="500.0" title="Largest Companies by Market Cap " />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
