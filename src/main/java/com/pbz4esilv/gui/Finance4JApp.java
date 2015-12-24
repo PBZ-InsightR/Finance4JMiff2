@@ -10,8 +10,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -25,8 +25,6 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
@@ -38,6 +36,52 @@ import java.util.*;
 
 public class Finance4JApp extends Application {
 
+    private Stage primaryStage;
+    private Pane rootLayout;
+
+    /**
+     * Returns the main stage.
+     * @return
+     */
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
+    public Finance4JApp() {}
+
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        this.primaryStage = primaryStage;
+        this.primaryStage.setTitle("BoursoVinci");
+        this.primaryStage.getIcons().add(new Image("file:src/main/resources/images/logo_stocks.png"));
+        initAccueil();
+    }
+
+    /**
+     * Initialize la page d'accueil
+     */
+    public void initAccueil() {
+        try {
+            // Load root layout from fxml file.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Finance4JApp.class.getClassLoader().getResource("com/pbz4esilv/gui/Finance4J.fxml"));
+            rootLayout = (Pane) loader.load();
+
+            // Show the scene containing the root layout.
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+
+            // Give the controller access to the main app.
+            MainController controller = loader.getController();
+            controller.setMain(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /*
     static class XCell extends ListCell<String> {
 
         List<Equity> listeq;
@@ -108,7 +152,8 @@ public class Finance4JApp extends Application {
         });
         pane.getChildren().add(lv);
         primaryStage.show();
-    }
+        */
+
 
     public static void main(String[] args) {
         launch(args);

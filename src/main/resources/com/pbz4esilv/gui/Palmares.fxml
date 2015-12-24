@@ -82,8 +82,8 @@
                                     <Insets left="60.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <Button mnemonicParsing="false" onAction="#handleApply" prefHeight="25.0" prefWidth="327.0" text="Apply" GridPane.columnIndex="3" />
-                              <Button mnemonicParsing="false" onAction="#handleReset" prefHeight="25.0" prefWidth="327.0" text="Reset" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="327.0" text="Apply" GridPane.columnIndex="3" />
+                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="327.0" text="Reset" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                         <Label fx:id="resultLabel" layoutX="9.0" layoutY="590.0" prefHeight="17.0" prefWidth="140.0" />
@@ -143,8 +143,8 @@
                                     <Insets left="60.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <Button mnemonicParsing="false" onAction="#handleApply1" prefHeight="25.0" prefWidth="327.0" text="Apply" GridPane.columnIndex="3" />
-                              <Button mnemonicParsing="false" onAction="#handleReset1" prefHeight="25.0" prefWidth="327.0" text="Reset" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="327.0" text="Apply" GridPane.columnIndex="3" />
+                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="327.0" text="Reset" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                         <Label fx:id="resultLabel1" layoutX="9.0" layoutY="590.0" prefHeight="17.0" prefWidth="140.0" />
@@ -204,8 +204,8 @@
                                     <Insets left="60.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <Button mnemonicParsing="false" onAction="#handleApply2" prefHeight="25.0" prefWidth="327.0" text="Apply" GridPane.columnIndex="3" />
-                              <Button mnemonicParsing="false" onAction="#handleReset2" prefHeight="25.0" prefWidth="327.0" text="Reset" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false"  prefHeight="25.0" prefWidth="327.0" text="Apply" GridPane.columnIndex="3" />
+                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="327.0" text="Reset" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                         <Label fx:id="resultLabel2" layoutX="9.0" layoutY="590.0" prefHeight="17.0" prefWidth="140.0" />
@@ -241,8 +241,8 @@
                                  </GridPane.margin>
                               </ChoiceBox>
                               <Label text="Sector :" GridPane.rowIndex="1" />
-                              <Button mnemonicParsing="false" onAction="#handleApply3" prefHeight="25.0" prefWidth="327.0" text="Apply" GridPane.columnIndex="3" />
-                              <Button mnemonicParsing="false" onAction="#handleReset3" prefHeight="25.0" prefWidth="327.0" text="Reset" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="327.0" text="Apply" GridPane.columnIndex="3" />
+                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="327.0" text="Reset" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                         <Separator layoutX="782.0" layoutY="102.0" orientation="VERTICAL" prefHeight="333.0" prefWidth="0.0" />
