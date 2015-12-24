@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="215.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox layoutX="190.0" layoutY="124.0" prefHeight="100.0" prefWidth="200.0">
+      <ImageView fitHeight="105.0" fitWidth="122.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/chart.png" />
+         </image>
+      </ImageView>
+      <Separator layoutY="130.0" prefHeight="0.0" prefWidth="400.0" />
+      <Separator layoutY="193.0" prefHeight="3.0" prefWidth="400.0" />
+      <Label layoutX="258.0" layoutY="196.0" text="Copyright © 2015 ESILV MIF 2™">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Button layoutX="40.0" layoutY="150.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="130.0" text="Calculs" />
+      <Button layoutX="230.0" layoutY="150.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="130.0" text="Graphiques" />
+      <AnchorPane layoutX="140.0" layoutY="15.0" prefHeight="100.0" prefWidth="230.0">
          <children>
-            <ComboBox prefWidth="150.0" />
-            <Button mnemonicParsing="false" text="LOAD" />
+            <Label layoutX="47.0" layoutY="5.0" text="BoursoVinci" textFill="#0071b2">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Separator layoutY="40.0" prefHeight="3.0" prefWidth="237.0" />
+            <Label layoutX="33.0" layoutY="42.0" text="Software Development Process" />
+            <Label alignment="CENTER" layoutX="79.0" layoutY="59.0" text="ESILV MIF 2" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="78.0" text="Plateforme d'informations financières" textFill="#006631" />
          </children>
-      </HBox>
+      </AnchorPane>
    </children>
 </Pane>
